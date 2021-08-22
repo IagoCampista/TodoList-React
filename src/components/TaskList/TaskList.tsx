@@ -1,6 +1,6 @@
 import { useState } from 'react'
 
-import '../styles/tasklist.scss'
+import './tasklist.scss'
 
 import { FiTrash, FiCheckSquare } from 'react-icons/fi'
 
@@ -89,9 +89,24 @@ export function TaskList() {
             </li>
           ))}
         </ul>
-        
+
         <div className='taskSummary'>
             <h2>Resumo das Tasks</h2>
+
+            <div>
+              <header>
+                <p>Total Tasks</p>
+              </header>
+              <strong>5</strong>
+            </div>
+
+            <div>
+              <header>
+                <p>Completed Tasks</p>
+              </header>
+              <strong>3</strong>
+            </div>
+
         </div>
       </main>
     </section>

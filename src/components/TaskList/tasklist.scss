@@ -159,6 +159,12 @@ section.task-list {
     }
     .taskSummary{
       margin-top: 5rem;
+
+      & div{
+        display: grid;
+        grid-template-columns: 1fr, 1fr;
+
+      }
     } 
   }
 }
