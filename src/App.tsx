@@ -1,5 +1,6 @@
 import { TaskList } from './components/TaskList/TaskList'
 import { Header } from "./components/Header/Header";
+import { TaskSummary } from './components/TaskSummary/TaskSummary';
 import './styles/global.scss'
 
 
@@ -8,6 +9,7 @@ export function App() {
     <>
       <Header />
       <TaskList />
+      <TaskSummary />
     </>
   )
 }

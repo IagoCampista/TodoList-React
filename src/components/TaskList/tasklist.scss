@@ -157,13 +157,16 @@ section.task-list {
         }
       }
     }
+
     .taskSummary{
       margin-top: 5rem;
 
-      & div{
+      .card{
         display: grid;
-        grid-template-columns: 1fr, 1fr;
+        grid-template-columns: repeat(2, 1fr);
+        gap: 2rem;
 
+        margin-bottom: 2rem;
       }
     } 
   }
