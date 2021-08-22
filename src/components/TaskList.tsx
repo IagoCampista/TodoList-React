@@ -89,7 +89,10 @@ export function TaskList() {
             </li>
           ))}
         </ul>
-
+        
+        <div className='taskSummary'>
+            <h2>Resumo das Tasks</h2>
+        </div>
       </main>
     </section>
   )
