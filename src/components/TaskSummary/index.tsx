@@ -1,6 +1,10 @@
+import { useContext } from "react";
+import { TasksContext } from "../../TasksContext";
 import { Container, Content } from "./styles";
 
+
 export function TaskSummary (){
+    const data = useContext(TasksContext);
 
     return(
         <Container>

@@ -1,8 +1,9 @@
-import { useState } from 'react'
+import { useState, useContext } from 'react'
 
 import './tasklist.scss'
 
 import { FiTrash, FiCheckSquare } from 'react-icons/fi'
+import { TasksContext } from '../../TasksContext';
 
 interface Task {
   id: number;
@@ -11,8 +12,12 @@ interface Task {
 }
 
 export function TaskList() {
+  const data = useContext(TasksContext);
   const [tasks, setTasks] = useState<Task[]>([]);
   const [newTaskTitle, setNewTaskTitle] = useState('');
+
+  const [totaltasks, setTotaltasks] = useState(0);
+  const [completedtasks, setCompletedtasks] = useState(0);
 
   function handleCreateNewTask() {
     // Crie uma nova task com um id random, não permita criar caso o título seja vazio.
@@ -27,6 +32,7 @@ export function TaskList() {
     setTasks(oldState => [...oldState, newTask]);
     setNewTaskTitle('');
 
+    setTotaltasks(totaltasks +1);
   }
 
   function handleToggleTaskCompletion(id: number) {
@@ -34,10 +40,14 @@ export function TaskList() {
 
     const newTasks = tasks.map(task => task.id === id ? {
       ...task,
-      isComplete: !task.isComplete
+      isComplete: !task.isComplete,
+      //if(task.isComplete){setCompletedtasks(completedtasks +1);}
+      
     } : task);
 
     setTasks(newTasks);
+
+    
   }
 
   function handleRemoveTask(id: number) {
@@ -46,6 +56,8 @@ export function TaskList() {
     const filteredTasks = tasks.filter(task => task.id != id);
 
     setTasks(filteredTasks)
+
+    setTotaltasks(totaltasks -1);
   }
 
   return (
@@ -56,7 +68,7 @@ export function TaskList() {
         <div className="input-group">
           <input 
             type="text" 
-            placeholder="Adicionar novo todo" 
+            placeholder="Adicionar novo to-do" 
             onChange={(e) => setNewTaskTitle(e.target.value)}
             value={newTaskTitle}
           />
@@ -89,6 +101,9 @@ export function TaskList() {
             </li>
           ))}
         </ul>
+
+        <p>Total Tasks {totaltasks}</p>
+        <p>Completed Tasks {completedtasks}</p>
       </main>
     </section>
   )
