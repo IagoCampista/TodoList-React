@@ -1,6 +1,6 @@
 import { useState, useContext } from 'react'
 
-import './tasklist.scss'
+import './styles.scss'
 
 import { FiTrash, FiCheckSquare } from 'react-icons/fi'
 import { TasksContext } from '../../TasksContext';

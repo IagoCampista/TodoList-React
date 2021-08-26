@@ -4,7 +4,7 @@ import { Container, Content } from "./styles";
 
 
 export function TaskSummary (){
-    const data = useContext(TasksContext);
+    const totalTasks = useContext(TasksContext);
 
     return(
         <Container>
@@ -14,7 +14,7 @@ export function TaskSummary (){
                 <header>
                     <p>Total Tasks</p>
                 </header>
-                <strong>5</strong>
+                <strong>{totalTasks}</strong>
                 </div>
 
                 <div className='Card'>
