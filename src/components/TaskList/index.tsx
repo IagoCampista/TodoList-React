@@ -17,7 +17,6 @@ export function TaskList() {
   const [newTaskTitle, setNewTaskTitle] = useState('');
 
   const [totaltasks, setTotaltasks] = useState(0);
-  const [completedtasks, setCompletedtasks] = useState(0);
 
   function handleCreateNewTask() {
     // Crie uma nova task com um id random, não permita criar caso o título seja vazio.
@@ -40,9 +39,7 @@ export function TaskList() {
 
     const newTasks = tasks.map(task => task.id === id ? {
       ...task,
-      isComplete: !task.isComplete,
-      //if(task.isComplete){setCompletedtasks(completedtasks +1);}
-      
+      isComplete: !task.isComplete,      
     } : task);
 
     setTasks(newTasks);
@@ -59,6 +56,8 @@ export function TaskList() {
 
     setTotaltasks(totaltasks -1);
   }
+
+  useContext(TasksContext);
 
   return (
     <section className="task-list container">
@@ -101,10 +100,10 @@ export function TaskList() {
             </li>
           ))}
         </ul>
-
-        <p>Total Tasks {totaltasks}</p>
-        <p>Completed Tasks {completedtasks}</p>
+        <p>---------------</p>      
+        <p>Total Tasks: {totaltasks}</p>
       </main>
     </section>
   )
 }
+

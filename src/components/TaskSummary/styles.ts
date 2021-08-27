@@ -19,10 +19,7 @@ export const Container = styled.div`
 
 export const Content = styled.div`
 
-    width: 100%;
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-
-    margin-top: 2rem;
-
+    margin: 0 auto;
+    width: 100%;    
+    margin: 2rem 0 2rem;
 `;

@@ -16,13 +16,6 @@ export function TaskSummary (){
                 </header>
                 <strong>{totalTasks}</strong>
                 </div>
-
-                <div className='Card'>
-                <header>
-                    <p>Completed Tasks</p>
-                </header>
-                <strong>35</strong>
-                </div>
             </Content>
         </Container>
     )
