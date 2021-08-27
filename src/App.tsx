@@ -7,7 +7,7 @@ import { useState } from 'react';
 
 
 export function App() {
-  const [totalTasks, setTotaltasks] = useState("0");
+  const [totalTasks, setTotaltasks] = useState(0);
 
   return (
     <>
